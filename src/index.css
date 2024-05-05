@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+  overflow-x: hidden;
+  margin: 0;
+}
+
+*::selection {
+  color: #8341e6;
+}
+
+.home {
+  height: 100vh;
+  width: 100vw;
+}
+
+.globe {
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+}
+
+.reveal {
+  z-index: 1;
+  /* width: fit-content; */
+}
+
+.on-load {
+  background: #8341e6;
+  z-index: 2;
+  width: 100vw;
+  position: absolute;
+  height: 100%;
+}
+
+.on-load-logo {
+  z-index: 3;
+  position: fixed;
+  top: 40%;
+  left: 35%;
+  width: 30%;
+  opacity: 0;
+}
