@@ -13,7 +13,7 @@ export default function Globe() {
       setVantaEffect(
         GLOBE({
           el: myRef.current,
-          mouseControls: true,
+          mouseControls: false,
           touchControls: false,
           minHeight: 200.0,
           minWidth: 200.0,
@@ -32,10 +32,8 @@ export default function Globe() {
   }, [vantaEffect]);
 
   return (
-    <Reveal slide={0}>
-      <div className="globe" ref={myRef}>
-        <></>
-      </div>
-    </Reveal>
+    <div className="globe" ref={myRef}>
+      <></>
+    </div>
   );
 }

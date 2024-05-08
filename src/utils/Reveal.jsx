@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import '../index.css';
 
-export default function Reveal({ children, slide = -60 }) {
+export default function Reveal({ children, slide = -75 }) {
   return (
     <div className="reveal">
       <motion.div
@@ -12,7 +12,7 @@ export default function Reveal({ children, slide = -60 }) {
         }}
         initial="hidden"
         animate="visible"
-        transition={{ duration: 0.7, delay: 3.3 }}
+        transition={{ duration: 1, delay: 3.6 }}
       >
         {children}
       </motion.div>

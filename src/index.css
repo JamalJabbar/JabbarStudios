@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
 body {
   overflow-x: hidden;
@@ -11,6 +12,8 @@ body {
 }
 
 .home {
+  font-family: "Inter";
+  font-weight: 200;
   height: 100vh;
   width: 100vw;
 }
@@ -18,6 +21,8 @@ body {
 .globe {
   width: 100vw;
   height: 100vh;
+  position: absolute;
+  top: 0;
   z-index: 0;
 }
 
@@ -26,9 +31,25 @@ body {
   /* width: fit-content; */
 }
 
+.on-load-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.load-background {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background-color: #202020;
+  z-index: 2;
+}
+
 .on-load {
   background: #8341e6;
-  z-index: 2;
+  z-index: 3;
   width: 100vw;
   position: absolute;
   height: 100%;
@@ -36,9 +57,6 @@ body {
 
 .on-load-logo {
   z-index: 3;
-  position: fixed;
-  top: 40%;
-  left: 35%;
-  width: 30%;
+  width: 50%;
   opacity: 0;
 }

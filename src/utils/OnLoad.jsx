@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { easeIn, easeOut, motion, useAnimate } from 'framer-motion';
 import '../index.css';
+import { background } from '@chakra-ui/react';
 
 export default function OnLoad() {
   const [scope, animate] = useAnimate();
@@ -58,12 +59,18 @@ export default function OnLoad() {
       },
     ],
     [
+      '#container',
+      {
+        opacity: 0,
+      },
+    ],
+    [
       '#image',
       {
         opacity: 0,
       },
       {
-        at: '-0.5',
+        at: '-.85',
       },
     ],
   ];
@@ -73,9 +80,10 @@ export default function OnLoad() {
   }, []);
 
   return (
-    <div ref={scope}>
+    <div className="on-load-container" ref={scope}>
+      <div className="load-background" id="container"></div>
       <div className="on-load" id="background"></div>;
-      <img id="image" className="on-load-logo" src="/jabbarstudios.svg"></img>
+      <img id="image" className="on-load-logo" src="/test-jabbar.svg"></img>
     </div>
   );
 }
