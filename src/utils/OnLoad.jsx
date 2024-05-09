@@ -83,7 +83,7 @@ export default function OnLoad() {
     <div className="on-load-container" ref={scope}>
       <div className="load-background" id="container"></div>
       <div className="on-load" id="background"></div>;
-      <img id="image" className="on-load-logo" src="/test-jabbar.svg"></img>
+      <img id="image" className="on-load-logo" src="/jabbar-studios.svg"></img>
     </div>
   );
 }

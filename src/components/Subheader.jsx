@@ -6,6 +6,7 @@ export default function Subheader() {
   return (
     <Reveal>
       <Text
+        mt={20}
         pb={10}
         fontSize={{ base: '2xl', md: '3xl', xl: '4xl' }}
         width={{ base: '100%', md: '75%', xl: '65%', '2xl': '70%' }}

@@ -19,6 +19,7 @@ export default function Header() {
     >
       <Reveal>
         <Image
+          mt={20}
           pt={20}
           userSelect="none"
           width={{ base: '90vw', md: '60vw', xl: '50vw%', '2xl': '40vw' }}
@@ -34,8 +35,8 @@ export default function Header() {
           Innovative, curated website design
         </Text>
       </Reveal>
-      <Spacer />
       <Subheader />
+      <Spacer />
     </VStack>
   );
 }
