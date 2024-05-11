@@ -28,7 +28,6 @@ body {
 
 .reveal {
   z-index: 1;
-  /* width: fit-content; */
 }
 
 .on-load-container {
@@ -44,7 +43,7 @@ body {
   height: 100vh;
   width: 100vw;
   background-color: #202020;
-  z-index: 2;
+  z-index: 3;
 }
 
 .on-load {
@@ -60,4 +59,15 @@ body {
   z-index: 3;
   width: 50%;
   opacity: 0;
+}
+
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: #8341e6;
+  transform-origin: 0%;
+  z-index: 2;
 }
