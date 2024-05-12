@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../index.css';
 import Header from '../components/Header';
 import Globe from '../components/Globe';
-import { Container } from '@chakra-ui/react';
+import Second from '../components/Second';
+import { Container, } from '@chakra-ui/react';
 import OnLoad from '../utils/OnLoad';
 
 const HomePage = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
   return (
     <>
       <Container
@@ -16,22 +19,11 @@ const HomePage = () => {
         maxW="100%"
         p={0}
       >
-        <OnLoad />
-        <Header />
+        {isLoading && <OnLoad cleanup={setIsLoading} />}
         <Globe />
-        <Container
-          bg="black"
-          borderTop="1px"
-          borderColor="red.200"
-          m={0}
-          color="white"
-          position="relative"
-          minW="100%"
-          height="100vh"
-        >
-          testing new container
-        </Container>
+        <Header />
       </Container>
+      <Second />
     </>
   );
 };

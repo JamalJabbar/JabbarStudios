@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { easeIn, easeOut, motion, useAnimate } from 'framer-motion';
+import { motion, useAnimate } from 'framer-motion';
 import '../index.css';
 import { background } from '@chakra-ui/react';
 
-export default function OnLoad() {
+export default function OnLoad({ cleanup }) {
   const [scope, animate] = useAnimate();
 
   const sequence = [
@@ -76,7 +76,14 @@ export default function OnLoad() {
   ];
 
   useEffect(() => {
-    animate(sequence);
+    const playAnimation = async () => {
+      const animation = animate(sequence);
+      await animation
+      console.log("Animation complete.")
+      cleanup(false)
+    }
+
+    playAnimation()
   }, []);
 
   return (
