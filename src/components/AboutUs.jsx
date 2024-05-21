@@ -3,6 +3,7 @@ import { VStack, Text, StackDivider } from '@chakra-ui/react';
 import React, { useEffect, useRef, useState } from 'react';
 import HighlightScroll from '../animations/HighlightScroll'
 import AnimatedDivider from '../animations/AnimatedDivider';
+import RevealText from '../animations/RevealText';
 
 const AboutUs = () => {
     const aboutUsText = `technology firm that creates-
@@ -12,7 +13,7 @@ const AboutUs = () => {
     return (
         <VStack
             maxW='100%'
-            h='100vh'
+            h='175vh'
             position='relative'
             pt={20}
             mr={10}
@@ -21,24 +22,38 @@ const AboutUs = () => {
                 alignSelf='start'
                 fontSize={{ base: 'xl', md: '2xl', xl: '3xl' }}
                 fontWeight={100}>
-                About Us
+                <RevealText translate={50} delay={0}>
+                    About Us
+                </RevealText>
             </Text>
             <AnimatedDivider />
-            <Text mt={20} ml={{ base: 0, xl: '30%' }} fontSize={{ xl: '7xl' }} fontWeight={600}>
-                <Text className='scroll-text'>
-                    <HighlightScroll />
-                    <Text color='#8341e6' mr={5} className='scroll-text'>Jabbar Studios</Text>
-                    is a design and
-                </Text>
-                {aboutUsText.map((line) => (
-                    <>
-                        <Text className='scroll-text'>
+            <VStack ml={{ base: 0, xl: '30%' }}>
+                <Text mt={40} mb={20} fontSize={{ xl: '7xl' }} fontWeight={600}>
+                    <Text className='scroll-text'>
+                        <HighlightScroll />
+                        <Text color='#8341e6' mr={5} className='scroll-text'>Jabbar Studios</Text>
+                        is a design and
+                    </Text>
+                    {aboutUsText.map((line, index) => (
+                        <Text key={index} className='scroll-text'>
                             <HighlightScroll />
                             {line}
                         </Text>
-                    </>
-                ))}
-            </Text>
+                    ))}
+                </Text>
+                <AnimatedDivider />
+                <VStack spacing={8} mt={20} fontSize={{ xl: '3xl' }} fontWeight={200}>
+                    <RevealText>
+                        <Text>We guide new and established companies to high-value marketing investments that increase revenue and relevance.</Text>
+                    </RevealText>
+                    <RevealText>
+                        <Text>Our mission is to develop the strategy, design the materials, and assemble the technologies that elevate your identity and future-proof your venture.</Text>
+                    </RevealText>
+                    <RevealText>
+                        <Text>Based out of Dallas, Texas, our team of innovative designers, developers, and consultants make creative use of emerging web technology and marketing tactics to provide our partners with a competitive edge.</Text>
+                    </RevealText>
+                </VStack>
+            </VStack>
         </VStack >
     );
 };

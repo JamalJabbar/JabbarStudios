@@ -2,7 +2,7 @@ import '../index.css';
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, useScroll, useTransform, useSpring, useMotionValue, useMotionValueEvent } from 'framer-motion';
 
-export default function HighlightScroll() {
+const HighlightScroll = () => {
     const ref = useRef(null);
     const { scrollYProgress } = useScroll({
         target: ref,
@@ -20,4 +20,6 @@ export default function HighlightScroll() {
     return (
         <motion.div className='line-mask' style={{ scaleX }} ref={ref} />
     );
-}
+};
+
+export default HighlightScroll;

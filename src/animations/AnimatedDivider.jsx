@@ -2,7 +2,7 @@ import '../index.css';
 import React, { useRef, useState } from 'react';
 import { motion, useScroll, useTransform, useSpring, useMotionValue } from 'framer-motion';
 
-export default function AnimatedDivider() {
+const AnimatedDivider = ({ style }) => {
     const ref = useRef(null);
     const { scrollYProgress } = useScroll({
         target: ref,
@@ -16,6 +16,8 @@ export default function AnimatedDivider() {
     });
 
     return (
-        <motion.div viewport={{ once: true }} className='animated-divider' style={{ scaleX }} ref={ref} />
+        <motion.div style={{ ...style, scaleX }} viewport={{ once: true }} className='animated-divider' ref={ref} />
     );
-}
+};
+
+export default AnimatedDivider;

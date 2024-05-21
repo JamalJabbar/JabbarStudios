@@ -20,7 +20,7 @@ function App() {
   return (
     <>
       <AnimatePresence>
-        {/* <motion.div className="progress-bar" style={{ scaleX }} /> */}
+        <motion.div className="progress-bar" style={{ scaleX }} />
         <Routes key={location.pathname} location={location}>
           <Route path="/" element={<HomePage />}>
             {/* <Route path="page1" element={<Page1 />} /> */}

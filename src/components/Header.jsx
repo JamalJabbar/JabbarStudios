@@ -5,14 +5,7 @@ import { motion, useInView, } from 'framer-motion';
 import Subheader from '../components/Subheader';
 import Reveal from '../animations/Reveal';
 
-export default function Header() {
-  // const ref = useRef(null)
-  // const isInView = useInView(ref)
-
-  // useEffect(() => {
-  //   console.log(`The element is ${isInView ? 'in view' : 'NOT in view'}`)
-
-  // }, [isInView])
+const Header = () => {
 
   return (
     <VStack
@@ -48,4 +41,6 @@ export default function Header() {
       <Spacer />
     </VStack>
   );
-}
+};
+
+export default Header;

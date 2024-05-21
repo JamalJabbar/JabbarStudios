@@ -1,9 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, useAnimate } from 'framer-motion';
 import '../index.css';
-import { background } from '@chakra-ui/react';
 
-export default function OnLoad({ cleanup }) {
+const OnLoad = ({ cleanup }) => {
   const [scope, animate] = useAnimate();
 
   const sequence = [
@@ -79,7 +78,6 @@ export default function OnLoad({ cleanup }) {
     const playAnimation = async () => {
       const animation = animate(sequence);
       await animation
-      console.log("Animation complete.")
       cleanup(false)
     }
 
@@ -93,4 +91,6 @@ export default function OnLoad({ cleanup }) {
       <img id="image" className="on-load-logo" src="/jabbar-studios.svg"></img>
     </div>
   );
-}
+};
+
+export default OnLoad;

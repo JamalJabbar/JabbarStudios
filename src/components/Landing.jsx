@@ -4,7 +4,7 @@ import OnLoad from '../utils/OnLoad';
 import Header from './Header';
 import Globe from './Globe';
 
-export default function Landing() {
+const Landing = () => {
   return (
     <Container>
       <OnLoad />
@@ -12,4 +12,6 @@ export default function Landing() {
       <Globe />
     </Container>
   );
-}
+};
+
+export default Landing;

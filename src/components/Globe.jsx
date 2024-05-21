@@ -5,7 +5,7 @@ import GLOBE from 'vanta/src/vanta.globe';
 import { Container } from '@chakra-ui/react';
 import Reveal from '../animations/Reveal';
 
-export default function Globe() {
+const Globe = () => {
   const [vantaEffect, setVantaEffect] = useState(null);
   const myRef = useRef(null);
   useEffect(() => {
@@ -13,7 +13,7 @@ export default function Globe() {
       setVantaEffect(
         GLOBE({
           el: myRef.current,
-          mouseControls: false,
+          mouseControls: true,
           touchControls: false,
           minHeight: 200.0,
           minWidth: 200.0,
@@ -36,4 +36,6 @@ export default function Globe() {
       <></>
     </div>
   );
-}
+};
+
+export default Globe;

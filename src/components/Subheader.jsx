@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Text, VStack, StackDivider } from '@chakra-ui/react';
 import Reveal from '../animations/Reveal';
 
-export default function Subheader() {
+const Subheader = () => {
   return (
     <Reveal>
       <Text
@@ -17,4 +17,6 @@ export default function Subheader() {
       </Text>
     </Reveal>
   );
-}
+};
+
+export default Subheader;
