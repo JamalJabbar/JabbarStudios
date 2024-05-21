@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import '../index.css';
 import GLOBE from 'vanta/src/vanta.globe';
 import { Container } from '@chakra-ui/react';
-import Reveal from '../utils/Reveal';
+import Reveal from '../animations/Reveal';
 
 export default function Globe() {
   const [vantaEffect, setVantaEffect] = useState(null);

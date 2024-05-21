@@ -3,7 +3,7 @@ import { Image, Text, Spacer, VStack } from '@chakra-ui/react';
 import { motion, useInView, } from 'framer-motion';
 
 import Subheader from '../components/Subheader';
-import Reveal from '../utils/Reveal';
+import Reveal from '../animations/Reveal';
 
 export default function Header() {
   // const ref = useRef(null)

@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import '../index.css';
 import Header from '../components/Header';
 import Globe from '../components/Globe';
-import Second from '../components/Second';
+import AboutUs from '../components/AboutUs';
 import { Container, } from '@chakra-ui/react';
-import OnLoad from '../utils/OnLoad';
+import OnLoad from '../animations/OnLoad';
 
 const HomePage = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -15,7 +15,7 @@ const HomePage = () => {
         className="home"
         bg="#202020"
         h="100vh"
-        width="100vw"
+        width="100%"
         maxW="100%"
         p={0}
       >
@@ -23,7 +23,8 @@ const HomePage = () => {
         <Globe />
         <Header />
       </Container>
-      <Second />
+      {/* <Second /> */}
+      <AboutUs />
     </>
   );
 };

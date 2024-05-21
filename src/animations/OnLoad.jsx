@@ -70,7 +70,7 @@ export default function OnLoad({ cleanup }) {
         opacity: 0,
       },
       {
-        at: '-.85',
+        at: '-.95',
       },
     ],
   ];

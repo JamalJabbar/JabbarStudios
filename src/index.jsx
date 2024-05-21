@@ -9,7 +9,8 @@ const customTheme = extendTheme({
   styles: {
     global: {
       body: {
-        color: 'white',
+        fontFamily: "M PLUS 1",
+        color: "white",
         bg: "#202020",
       },
     },
