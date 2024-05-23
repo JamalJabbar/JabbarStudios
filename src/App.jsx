@@ -1,13 +1,22 @@
-import React, { useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence, useScroll, useSpring } from 'framer-motion';
+import { spring, useVariants } from "./animations/CursorConfig";
 import { Route, Routes, useLocation } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 
 function App() {
   const location = useLocation();
-  useEffect(() => {
-    window.history.scrollRestoration = 'manual';
-  }, [location]);
+
+  const [cursorText, setCursorText] = useState("");
+  const [cursorVariant, setCursorVariant] = useState("default");
+
+  const ref = useRef(null);
+
+  const variants = useVariants(ref);
+
+  // useEffect(() => { # scrolls to top of page on reload
+  //   window.history.scrollRestoration = 'manual';
+  // }, [location]);
 
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
@@ -20,12 +29,22 @@ function App() {
   return (
     <>
       <AnimatePresence>
-        <motion.div className="progress-bar" style={{ scaleX }} />
-        <Routes key={location.pathname} location={location}>
-          <Route path="/" element={<HomePage />}>
-            {/* <Route path="page1" element={<Page1 />} /> */}
-          </Route>
-        </Routes>
+        {/* <motion.div className="progress-bar" style={{ scaleX }} /> */}
+        <div className='cursor-container' ref={ref}>
+          <motion.div
+            variants={variants}
+            className="circle"
+            animate={cursorVariant}
+          // transition={spring}
+          >
+            <span className="cursorText">{cursorText}</span>
+          </motion.div>
+          <Routes key={location.pathname} location={location}>
+            <Route path="/" element={<HomePage setCursorVariant={setCursorVariant} setCursorText={setCursorText} />}>
+              {/* <Route path="page1" element={<Page1 />} /> */}
+            </Route>
+          </Routes>
+        </div>
       </AnimatePresence>
     </>
   );

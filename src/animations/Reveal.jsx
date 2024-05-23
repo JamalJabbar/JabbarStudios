@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import '../index.css';
 
-const Reveal = ({ children, slide = -75, delay = 3.6 }) => {
+const Reveal = ({ children, slide = 0, delay = 4.4 }) => {
   return (
     <div className="reveal">
       <motion.div

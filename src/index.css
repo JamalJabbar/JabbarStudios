@@ -16,6 +16,35 @@ body {
   width: 100vw;
 }
 
+.circle {
+  position: fixed;
+  z-index: 3;
+  display: flex;
+  flex-flow: row;
+  align-content: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  height: 10px;
+  width: 10px;
+  background-color: #D44343;
+  border-radius: 200px;
+  pointer-events: none;
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+}
+
+.cursorText {
+  font-family: "M PLUS 1";
+  font-weight: 200;
+  flex: auto;
+  font-size: 16px;
+  pointer-events: none;
+  margin: auto;
+  color: white;
+}
+
 .globe {
   width: 100vw;
   height: 100vh;
@@ -41,12 +70,12 @@ body {
   height: 100vh;
   width: 100vw;
   background-color: #202020;
-  z-index: 3;
+  z-index: 4;
 }
 
 .on-load {
   background: #8341e6;
-  z-index: 3;
+  z-index: 4;
   width: 100vw;
   position: fixed;
   height: 100%;
@@ -54,7 +83,7 @@ body {
 
 .on-load-logo {
   position: fixed;
-  z-index: 3;
+  z-index: 4;
   width: 50%;
   opacity: 0;
 }

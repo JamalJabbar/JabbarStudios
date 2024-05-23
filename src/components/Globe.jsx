@@ -13,7 +13,7 @@ const Globe = () => {
       setVantaEffect(
         GLOBE({
           el: myRef.current,
-          mouseControls: true,
+          mouseControls: false,
           touchControls: false,
           minHeight: 200.0,
           minWidth: 200.0,

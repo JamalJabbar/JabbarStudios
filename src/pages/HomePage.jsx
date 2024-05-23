@@ -6,8 +6,17 @@ import AboutUs from '../components/AboutUs';
 import { Container, } from '@chakra-ui/react';
 import OnLoad from '../animations/OnLoad';
 
-const HomePage = () => {
+const HomePage = ({ setCursorVariant, setCursorText }) => {
   const [isLoading, setIsLoading] = useState(true);
+  const setScrollCursor = () => {
+    setCursorVariant('buy');
+    setCursorText('scroll');
+  }
+
+  const setScrollLeave = () => {
+    setCursorVariant('default');
+    setCursorText('');
+  }
 
   return (
     <>
@@ -18,6 +27,8 @@ const HomePage = () => {
         width="100%"
         maxW="100%"
         p={0}
+        onMouseEnter={setScrollCursor}
+        onMouseLeave={setScrollLeave}
       >
         {isLoading && <OnLoad cleanup={setIsLoading} />}
         <Globe />

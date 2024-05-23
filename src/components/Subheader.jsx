@@ -4,7 +4,7 @@ import Reveal from '../animations/Reveal';
 
 const Subheader = () => {
   return (
-    <Reveal>
+    <Reveal delay={4.3}>
       <Text
         mt={20}
         pb={10}
