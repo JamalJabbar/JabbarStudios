@@ -2,18 +2,18 @@ import '../index.css';
 import { VStack, Text, StackDivider } from '@chakra-ui/react';
 import React, { useEffect, useRef, useState } from 'react';
 import HighlightScroll from '../animations/HighlightScroll'
-import AnimatedDivider from '../animations/AnimatedDivider';
+import AnimatedDivider from '../animations/Divider';
 import RevealText from '../animations/RevealText';
 
 const AboutUs = () => {
-    const aboutUsText = `technology firm that creates-
+    const aboutUsText = `and tech firm that creates-
     tailor made digital solutions-
     through custom wesbites.`.split("-")
 
     return (
         <VStack
             maxW='100%'
-            h='175vh'
+            h='200vh'
             position='relative'
             pt={20}
             mr={10}
@@ -28,11 +28,11 @@ const AboutUs = () => {
             </Text>
             <AnimatedDivider />
             <VStack ml={{ base: 0, xl: '30%' }}>
-                <Text mt={40} mb={20} fontSize={{ xl: '7xl' }} fontWeight={600}>
+                <Text mt={40} mb={20} fontSize={{ xl: '7xl' }} fontWeight={500}>
                     <Text className='scroll-text'>
                         <HighlightScroll />
                         <Text color='#8341e6' mr={5} className='scroll-text'>Jabbar Studios</Text>
-                        is a design and
+                        is a design
                     </Text>
                     {aboutUsText.map((line, index) => (
                         <Text key={index} className='scroll-text'>

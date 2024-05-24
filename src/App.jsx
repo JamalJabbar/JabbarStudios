@@ -3,6 +3,7 @@ import { motion, AnimatePresence, useScroll, useSpring } from 'framer-motion';
 import { spring, useVariants } from "./animations/CursorConfig";
 import { Route, Routes, useLocation } from 'react-router-dom';
 import HomePage from './pages/HomePage';
+import Footer from './components/Footer';
 
 function App() {
   const location = useLocation();
@@ -31,19 +32,19 @@ function App() {
       <AnimatePresence>
         {/* <motion.div className="progress-bar" style={{ scaleX }} /> */}
         <div className='cursor-container' ref={ref}>
-          <motion.div
+          {/* <motion.div
             variants={variants}
             className="circle"
             animate={cursorVariant}
-          // transition={spring}
           >
             <span className="cursorText">{cursorText}</span>
-          </motion.div>
+          </motion.div> */}
           <Routes key={location.pathname} location={location}>
             <Route path="/" element={<HomePage setCursorVariant={setCursorVariant} setCursorText={setCursorText} />}>
               {/* <Route path="page1" element={<Page1 />} /> */}
             </Route>
           </Routes>
+          <Footer />
         </div>
       </AnimatePresence>
     </>

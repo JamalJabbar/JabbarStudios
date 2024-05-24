@@ -4,12 +4,13 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 import HomePage from './pages/HomePage';
 import App from './App';
+import './index.css';
 
 const customTheme = extendTheme({
   styles: {
     global: {
       body: {
-        fontFamily: "M PLUS 1",
+        fontFamily: 'M PLUS 1',
         color: "white",
         bg: "#202020",
       },

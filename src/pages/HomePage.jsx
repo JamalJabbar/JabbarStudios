@@ -27,8 +27,8 @@ const HomePage = ({ setCursorVariant, setCursorText }) => {
         width="100%"
         maxW="100%"
         p={0}
-        onMouseEnter={setScrollCursor}
-        onMouseLeave={setScrollLeave}
+      // onMouseEnter={setScrollCursor}
+      // onMouseLeave={setScrollLeave}
       >
         {isLoading && <OnLoad cleanup={setIsLoading} />}
         <Globe />
