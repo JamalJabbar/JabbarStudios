@@ -32,9 +32,11 @@ const Globe = () => {
   }, [vantaEffect]);
 
   return (
-    <div className="globe" ref={myRef}>
-      <></>
-    </div>
+    <Reveal delay={0} slide={0}>
+      <div className="globe" ref={myRef}>
+        <></>
+      </div>
+    </Reveal>
   );
 };
 

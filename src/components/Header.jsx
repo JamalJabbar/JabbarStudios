@@ -19,7 +19,7 @@ const Header = () => {
       pl={{ base: 10, lg: 20 }}
       pr={{ base: 10, }}
     >
-      <Reveal delay={3.8}>
+      <Reveal delay={0.4}>
         <Image
           mt={20}
           pt={20}
@@ -28,7 +28,7 @@ const Header = () => {
           src="/jabbar.svg"
         ></Image>
       </Reveal>
-      <Reveal delay={4.1}>
+      <Reveal delay={0.8}>
         <Text
           fontSize={{ base: 'lg', md: 'xl', xl: '2xl' }}
           as="i"

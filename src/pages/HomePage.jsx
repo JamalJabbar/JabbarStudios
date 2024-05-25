@@ -4,10 +4,8 @@ import Header from '../components/Header';
 import Globe from '../components/Globe';
 import AboutUs from '../components/AboutUs';
 import { Container, } from '@chakra-ui/react';
-import OnLoad from '../animations/OnLoad';
 
 const HomePage = ({ setCursorVariant, setCursorText }) => {
-  const [isLoading, setIsLoading] = useState(true);
   const setScrollCursor = () => {
     setCursorVariant('buy');
     setCursorText('scroll');
@@ -30,7 +28,6 @@ const HomePage = ({ setCursorVariant, setCursorText }) => {
       // onMouseEnter={setScrollCursor}
       // onMouseLeave={setScrollLeave}
       >
-        {isLoading && <OnLoad cleanup={setIsLoading} />}
         <Globe />
         <Header />
       </Container>

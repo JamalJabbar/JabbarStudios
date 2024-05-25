@@ -4,9 +4,13 @@ import { spring, useVariants } from "./animations/CursorConfig";
 import { Route, Routes, useLocation } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import Footer from './components/Footer';
+import SmoothScroll from './animations/SmoothScroll';
+import OnLoad from './animations/OnLoad';
 
 function App() {
   const location = useLocation();
+
+  const [isLoading, setIsLoading] = useState(true);
 
   const [cursorText, setCursorText] = useState("");
   const [cursorVariant, setCursorVariant] = useState("default");
@@ -30,23 +34,26 @@ function App() {
   return (
     <>
       <AnimatePresence>
-        {/* <motion.div className="progress-bar" style={{ scaleX }} /> */}
-        <div className='cursor-container' ref={ref}>
-          {/* <motion.div
+        {isLoading ? <OnLoad cleanup={setIsLoading} /> :
+          <SmoothScroll className='example'>
+            <div className='cursor-container' ref={ref}>
+              {/* <motion.div
             variants={variants}
             className="circle"
             animate={cursorVariant}
           >
             <span className="cursorText">{cursorText}</span>
           </motion.div> */}
-          <Routes key={location.pathname} location={location}>
-            <Route path="/" element={<HomePage setCursorVariant={setCursorVariant} setCursorText={setCursorText} />}>
-              {/* <Route path="page1" element={<Page1 />} /> */}
-            </Route>
-          </Routes>
-          <Footer />
-        </div>
-      </AnimatePresence>
+              <Routes key={location.pathname} location={location}>
+                <Route path="/" element={<HomePage setCursorVariant={setCursorVariant} setCursorText={setCursorText} />}>
+                  {/* <Route path="page1" element={<Page1 />} /> */}
+                </Route>
+              </Routes>
+              <Footer />
+            </div>
+          </SmoothScroll>
+        }
+      </AnimatePresence >
     </>
   );
 }

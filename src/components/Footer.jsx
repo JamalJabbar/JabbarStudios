@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { useScroll, useTransform, motion } from "framer-motion";
 import { Flex, Spacer, Text, VStack, Image, Show } from "@chakra-ui/react";
-import ParallaxText from "./HorizontalScrollText";
+import ParallaxText from "../animations/HorizontalScrollText";
 import AnimatedDivider from "../animations/Divider";
 import Underline from "../animations/Underline";
 import RevealText from "../animations/RevealText";

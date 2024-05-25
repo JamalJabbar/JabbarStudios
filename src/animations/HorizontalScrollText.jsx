@@ -29,7 +29,7 @@ const HorizontalScrollText = ({ children, baseVelocity = 100 }) => {
      * have to replace for wrapping that works for you or dynamically
      * calculate
      */
-    const x = useTransform(baseX, (v) => `${wrap(25, -35, v)}%`);
+    const x = useTransform(baseX, (v) => `${wrap(0, -25.6, v)}%`);
 
     const directionFactor = useRef(1);
     useAnimationFrame((t, delta) => {
