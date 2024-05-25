@@ -6,7 +6,7 @@ const HighlightScroll = () => {
     const ref = useRef(null);
     const { scrollYProgress } = useScroll({
         target: ref,
-        offset: ['start 70%', 'start 65%']
+        offset: ['start 50%', 'start 45%']
     });
 
     const springScale = useSpring(scrollYProgress, {

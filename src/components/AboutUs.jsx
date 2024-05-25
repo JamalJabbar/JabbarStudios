@@ -28,7 +28,7 @@ const AboutUs = () => {
             </Text>
             <AnimatedDivider />
             <VStack ml={{ base: 0, xl: '30%' }}>
-                <Text mt={40} mb={20} fontSize={{ xl: '7xl' }} fontWeight={500}>
+                <Text mt={40} mb={20} fontSize={{ base: '3xl', xl: '7xl' }} fontWeight={500}>
                     <Text className='scroll-text'>
                         <HighlightScroll />
                         <Text color='#8341e6' mr={5} className='scroll-text'>Jabbar Studios</Text>
