@@ -77,7 +77,7 @@ body {
 }
 
 .on-load {
-  background: #8341e6;
+  background: #4B0082;
   z-index: 4;
   width: 100vw;
   position: fixed;
@@ -154,9 +154,11 @@ body {
 }
 
 .underline {
-  height: 0px;
+  height: 2px;
   background-color: #fff;
   width: 0%;
   padding-right: 5px;
   padding-left: 5px;
+  transform-origin: 0%;
+  opacity: 0;
 }

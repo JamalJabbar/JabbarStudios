@@ -4,6 +4,7 @@ import { Flex, Spacer, Text, VStack, Image, Show } from "@chakra-ui/react";
 import ParallaxText from "./HorizontalScrollText";
 import AnimatedDivider from "../animations/Divider";
 import Underline from "../animations/Underline";
+import RevealText from "../animations/RevealText";
 
 export const goToTop = () => {
     document.documentElement.scrollTo({
@@ -37,15 +38,25 @@ const FooterContent = ({ scrollProgress }) => {
                 <AnimatedDivider />
             </motion.div>
             <Flex ml={10} width='100%'>
-                <Underline>
-                    <Text mt={5} alignSelf='start' fontSize={{ base: '2xl', md: '4xl', xl: '7xl' }} fontWeight={300} cursor='pointer'>
-                        hello@jabbar.studio
-                    </Text>
-                </Underline>
+                <RevealText>
+                    <Underline>
+                        <Text mt={5} alignSelf='start' fontSize={{ base: '2xl', md: '4xl', xl: '7xl' }} fontWeight={300} cursor='pointer'>
+                            hello@jabbar.studio
+                        </Text>
+                    </Underline>
+                </RevealText>
             </Flex>
             <Spacer />
-            <Text pl={10} fontSize={{ xl: '2xl' }} fontWeight={200} textTransform='uppercase' alignSelf='start'>Jamal Jabbar</Text>
-            <Text pl={10} fontSize={{ xl: '2xl' }} fontWeight={200} alignSelf='start' cursor='pointer'>+1 (469) 664 8690</Text>
+            <RevealText style={{ alignSelf: 'start' }}>
+                <Text ml={10} fontSize={{ xl: '2xl' }} fontWeight={200} textTransform='uppercase' alignSelf='start'>Jamal Jabbar</Text>
+                <Text ml={10} fontSize={{ xl: '2xl' }} fontWeight={200} alignSelf='start' cursor='pointer'>
+                    <Underline>
+                        <>
+                            +1 (469) 664 8690
+                        </>
+                    </Underline>
+                </Text>
+            </RevealText>
             <Spacer />
             <Flex p={10} width='100%'>
                 <Text textTransform='capitalize' fontSize={{ base: 'sm', xl: 'md' }} fontWeight={100} opacity={.5}>
