@@ -1507,18 +1507,18 @@
   resolved "https://registry.yarnpkg.com/@rollup/rollup-win32-x64-msvc/-/rollup-win32-x64-msvc-4.15.0.tgz#68bb584231dfc8e36bb7ad5317dfd1fd2563a6f7"
   integrity sha512-YA0hTwCunmKNeTOFWdJuKhdXse9jBqgo34FDo+9aS0spfCkp+wj0o1bCcOOTu+0P48O95GTfkLTAaVonwNuIdQ==
 
-"@splinetool/react-spline@^2.2.6":
-  version "2.2.6"
-  resolved "https://registry.yarnpkg.com/@splinetool/react-spline/-/react-spline-2.2.6.tgz#c48f634f352311b9da210978f88bd195d605ee8a"
-  integrity sha512-y9L2VEbnC6FNZZu8XMmWM9YTTTWal6kJVfP05Amf0QqDNzCSumKsJxZyGUODvuCmiAvy0PfIfEsiVKnSxvhsDw==
+"@splinetool/react-spline@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@splinetool/react-spline/-/react-spline-3.0.0.tgz#714f27abf90260bae7ae7367d5b4601a7a6cb082"
+  integrity sha512-dHyIAWIGL8FGUUsGrfTd894zBZBOsRQpCRtHvsmTj3t11+iBgGKKUa6HXtCV5jfd8RM2KCAc76vJZaDO3cuVOw==
   dependencies:
     lodash.debounce "^4.0.8"
-    react-merge-refs "^2.0.1"
+    react-merge-refs "^2.1.1"
 
-"@splinetool/runtime@^1.4.0":
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/@splinetool/runtime/-/runtime-1.4.0.tgz#da311757c820a52330c871f2a5c13c8d26a9dc26"
-  integrity sha512-LKi7quEo6Rsls6PHdpjYaeL9vKtsK+AI350fbxNASiRCoChkfoLtLKB+xLiPq5MvNgl2hXHk5dWyd2QSmzA9Kg==
+"@splinetool/runtime@^1.4.1":
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/@splinetool/runtime/-/runtime-1.4.1.tgz#9477b8b5f858f9b0f2d6d009221ad7b265c20871"
+  integrity sha512-a5lcE5jXE99W2qWHk4f4ejL471jwzfIYmv5y0nbsFl2iktoIlI4wbUXrKVzdwpoiMXpEjxaz0AaVysHHe681+A==
   dependencies:
     on-change "^4.0.0"
     semver-compare "^1.0.0"
@@ -3200,9 +3200,9 @@ react-is@^16.13.1, react-is@^16.7.0:
   resolved "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
-react-merge-refs@^2.0.1:
+react-merge-refs@^2.1.1:
   version "2.1.1"
-  resolved "https://registry.npmjs.org/react-merge-refs/-/react-merge-refs-2.1.1.tgz"
+  resolved "https://registry.yarnpkg.com/react-merge-refs/-/react-merge-refs-2.1.1.tgz#e46763f8f1b881c0226ee54a1a2a10ffefba0233"
   integrity sha512-jLQXJ/URln51zskhgppGJ2ub7b2WFKGq3cl3NYKtlHoTG+dN2q7EzWrn3hN3EgPsTMvpR9tpq5ijdp7YwFZkag==
 
 react-refresh@^0.14.0:

@@ -1,69 +1,58 @@
 import '../index.css';
 import React, { useEffect, useRef, useState } from 'react';
 import { Container, VStack, Text, Spacer, Flex } from '@chakra-ui/react';
-import { motion, useAnimate, useInView, useScroll, useMotionValueEvent, useTransform } from 'framer-motion';
-import Spline from '@splinetool/react-spline';
-import ScrollText from '../animations/ScrollText';
+import { motion, useInView, useScroll, useMotionValueEvent, useTransform } from 'framer-motion';
+// import Spline from '@splinetool/react-spline';
+import SlideText from '../animations/SlideText';
 
 const Second = () => {
-    return (
-        <Container
-            maxW='100%'
-            h='100vh'
-            position='relative'
-            mt={20}
-            mb={200}>
-            <Spline className='particles' scene="https://draft.spline.design/34WRRzlYLuIp1lsm/scene.splinecode" />
-            <VStack
-                h='100%'
-                w='100%'
-                pr={100}
-                pl={100}
-                textTransform='uppercase'
-                fontWeight={300}
-                fontSize={{ base: 'lg', md: 'xl', xl: '5xl' }}>
-                <Spacer />
-                <ScrollText start={500} end={-200}>
-                    <Text position='relative' w={500} alignSelf='start' textAlign={'left'}>
-                        Bring your brand to <span style={{ color: '#8341e6' }}>life</span>
-                    </Text>
-                </ScrollText>
-                <Spacer />
-                <ScrollText start={-500} end={250}>
-                    <Text w={500} alignSelf='end' textAlign={'right'}>
-                        and connect your business to the <span style={{ color: '#8341e6' }}>world</span>
-                    </Text>
-                </ScrollText>
-                <Spacer />
+    const ref = useRef(null);
 
-            </VStack>
-            {/* <Text
-                as='i'
-                fontSize={{ base: 'lg', md: 'xl', xl: '6xl' }}
-                w='100%'
-                pr={10}
-                pl={10}
-                fontFamily="Inter"
-                fontWeight={500}
-                color='white'>
-                <motion.div ref={scope}>
-                    <Text
-                        color='#8341e6'
-                        as='span' mr={20}
-                        fontFamily="Inter" fontWeight={200}
-                        fontSize={{ base: 'md', md: 'lg', xl: 'xl' }}>
-                        jabbar studios
-                    </Text>
-                    {breahteText.map((word) => (
-                        <div className='scroll-text' style={{ marginRight: '12px', textTransform: 'uppercase' }}>
-                            {[...word].map((letter) => (
-                                <span>{letter}</span>
-                            ))}
-                        </div>
-                    ))}
-                </motion.div>
-            </Text> */}
-        </Container >
+    const { scrollYProgress } = useScroll({ container: ref });
+
+    const backgroundColor = useTransform(
+        scrollYProgress,
+        [0, 100],
+        ["#202020", "#000"]
+    );
+
+    return (
+        <div ref={ref}>
+            <motion.div style={{ backgroundColor: backgroundColor }}>
+                <Container
+                    maxW='100%'
+                    h='100vh'
+                    position='relative'
+                    mt={20}
+                    pb={200}>
+                    <Spline className='particles' scene="https://prod.spline.design/f8bcJxiCkxNJ4Qpb/scene.splinecode" />
+                    <VStack
+                        h='100vh'
+                        w='100%'
+                        pr={100}
+                        pl={100}
+                        textTransform='uppercase'
+                        fontWeight={500}
+                        fontSize={{ base: 'lg', md: 'xl', xl: '6xl' }}>
+                        <Spacer />
+                        <SlideText start={-600} end={0}>
+                            <Text position='relative' w={600} textAlign={'left'}>
+                                Bring your brand to <span style={{ color: '#8341e6' }}>life...</span>
+                            </Text>
+                        </SlideText>
+                        <Spacer />
+                        <Text w={400} alignSelf={'start'} fontSize={{ base: 'lg', xl: 'xl' }}>Lorem ipsum bakahh aiirkrk lahahaj  hajkakkkk ,a,an aj ka kakak   </Text>
+                        <Spacer />
+                        <SlideText start={600} end={0}>
+                            <Text w={600} textAlign={'right'}>
+                                connect your business to the <span style={{ color: '#8341e6' }}>world</span>
+                            </Text>
+                        </SlideText>
+                        <Spacer />
+                    </VStack>
+                </Container >
+            </motion.div>
+        </div >
     )
 }
 

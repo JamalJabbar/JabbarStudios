@@ -4,8 +4,13 @@ import { motion, useAnimate } from "framer-motion";
 const Underline = ({ children }) => {
     const [scope, animate] = useAnimate()
 
+    const sequence = [
+        ["div", { width: '0%' }, { duration: 0.2 }],
+        ["div", { width: '100%' }, { ease: "easeInOut" }]
+    ]
+
     const underline = () => {
-        animate("div", { width: '100%', opacity: 1 })
+        animate(sequence)
     };
 
     const remove = () => {
@@ -13,7 +18,7 @@ const Underline = ({ children }) => {
     };
 
     return (
-        <VStack onMouseEnter={underline} onMouseLeave={remove} ref={scope}>
+        <VStack onMouseEnter={underline} ref={scope}>
             {children}
             <div className="underline" />
         </VStack>

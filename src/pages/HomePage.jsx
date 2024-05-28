@@ -3,8 +3,9 @@ import '../index.css';
 import Header from '../components/Header';
 import Globe from '../components/Globe';
 import AboutUs from '../components/AboutUs';
-import Second from '../components/Second';
-import { Container, VStack, } from '@chakra-ui/react';
+import Steps from '../components/Steps';
+import { VStack, } from '@chakra-ui/react';
+import Spline from '@splinetool/react-spline';
 
 const HomePage = ({ setCursorVariant, setCursorText }) => {
   const setScrollCursor = () => {
@@ -22,6 +23,8 @@ const HomePage = ({ setCursorVariant, setCursorText }) => {
       <Globe />
       <Header />
       <AboutUs />
+      <Steps />
+      <Spline scene="https://prod.spline.design/UUY60b5IA4I8cqmh/scene.splinecode" />
     </VStack>
   );
 };

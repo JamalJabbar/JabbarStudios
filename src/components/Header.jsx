@@ -16,6 +16,7 @@ const Header = () => {
       color="white"
       zIndex={1}
       align="flex-start"
+      fontWeight={200}
       pl={{ base: 10, lg: 20 }}
       pr={{ base: 10, }}
     >

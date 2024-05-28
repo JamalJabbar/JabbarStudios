@@ -31,8 +31,8 @@ const Footer = () => {
 const FooterContent = ({ scrollProgress }) => {
     const y = useTransform(scrollProgress, [0, 1], [-225, 0])
     return (
-        <VStack p={0} maxW='100%' h='100vh' bg='black'>
-            <Flex ml={10} width='100%'>
+        <VStack mt={20} p={0} h='110vh' maxW='100%' bg='black' borderRadius='5% 5% 0px 0px'>
+            <Flex ml={10} pt={50} width='100%'>
                 <RevealText>
                     <Underline>
                         <Text mt={5} alignSelf='start' fontSize={{ base: '2xl', md: '4xl', xl: '7xl' }} fontWeight={300} cursor='pointer'>
