@@ -1,8 +1,8 @@
 import React, { useRef } from "react";
 import { useScroll, useTransform, motion } from "framer-motion";
-import { Flex, Spacer, Text, VStack, Image, Show } from "@chakra-ui/react";
+import { Flex, Spacer, Text, VStack, Image, Show, Box } from "@chakra-ui/react";
 import ParallaxText from "../animations/HorizontalScrollText";
-import AnimatedDivider from "../animations/Divider";
+import AnimatedDivider from "../animations/ScrollDivider";
 import Underline from "../animations/Underline";
 import RevealText from "../animations/RevealText";
 
@@ -29,14 +29,9 @@ const Footer = () => {
 }
 
 const FooterContent = ({ scrollProgress }) => {
-    const y = useTransform(scrollProgress, [0, 1], [-350, 0])
+    const y = useTransform(scrollProgress, [0, 1], [-225, 0])
     return (
-        <VStack p={0} maxW='100%' h='100vh' bg='black' overflow='hidden'>
-            <motion.div style={{ y, paddingTop: '1%' }}>
-                <AnimatedDivider />
-                <ParallaxText baseVelocity={-5}>let's talk</ParallaxText>
-                <AnimatedDivider />
-            </motion.div>
+        <VStack p={0} maxW='100%' h='100vh' bg='black'>
             <Flex ml={10} width='100%'>
                 <RevealText>
                     <Underline>
@@ -58,6 +53,11 @@ const FooterContent = ({ scrollProgress }) => {
                 </Text>
             </RevealText>
             <Spacer />
+            <Box pb={10}>
+                <Box className="divider" />
+                <ParallaxText baseVelocity={-5}>let's talk</ParallaxText>
+                <Box className="divider" />
+            </Box>
             <Flex p={10} width='100%'>
                 <Text textTransform='capitalize' fontSize={{ base: 'sm', xl: 'md' }} fontWeight={100} opacity={.5}>
                     © 2024, Jabbar Studios, all rights reserved
@@ -70,6 +70,7 @@ const FooterContent = ({ scrollProgress }) => {
                 </Show>
             </Flex>
         </VStack>
+
     )
 };
 

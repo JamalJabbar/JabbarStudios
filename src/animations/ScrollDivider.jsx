@@ -6,7 +6,7 @@ const AnimatedDivider = ({ style }) => {
     const ref = useRef(null);
     const { scrollYProgress } = useScroll({
         target: ref,
-        offset: ['start 70%', 'start 65%'],
+        offset: ['start 70%', 'start 60%'],
     });
 
     const scaleX = useSpring(scrollYProgress, {

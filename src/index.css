@@ -65,7 +65,6 @@ body::-webkit-scrollbar {
 .globe {
   width: 100vw;
   height: 100vh;
-  position: absolute;
   top: 0;
   z-index: 0;
 }
@@ -146,6 +145,15 @@ body::-webkit-scrollbar {
   display: flex;
   position: static;
   transform-origin: 0%;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  opacity: .25;
+  background-color: #fff;
+  align-items: flex-end;
+  display: flex;
 }
 
 .parallax {

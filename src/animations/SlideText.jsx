@@ -2,11 +2,11 @@ import React, { useRef, useState } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import '../index.css';
 
-export default function ScrollText({ children, start, end }) {
+const SlideText = ({ children, start, end }) => {
     const textRef = useRef(null);
     const { scrollYProgress } = useScroll({
         target: textRef,
-        offset: ['start end', 'start 66%']
+        offset: ['start 80%', 'start 60%']
     })
 
     const slide = useSpring(scrollYProgress, {
@@ -27,4 +27,6 @@ export default function ScrollText({ children, start, end }) {
             {children}
         </motion.div>
     );
-}
+};
+
+export default SlideText;
