@@ -9,7 +9,6 @@ import {
 } from '@chakra-ui/react';
 import Spline from '@splinetool/react-spline';
 import RevealText from '../animations/RevealText';
-import { steps } from 'framer-motion';
 
 const Steps = () => {
   const listOfSteps = [
@@ -61,12 +60,12 @@ const Steps = () => {
         {listOfSteps.map((step, index) => {
           return (
             <Box
+              key={index}
               borderRadius="5%"
               border="1px solid #8341e6"
               h={{ base: '', xl: '90vh' }}
               w="100%"
               p={20}
-              s
             >
               <Flex h="100%" w="100%" justify="space-evenly">
                 <VStack h="100%">
@@ -78,10 +77,18 @@ const Steps = () => {
                     }}
                   >
                     <Flex align="baseline">
-                      <Text fontSize={{ xl: '5xl' }} fontWeight={400} mr={5}>
+                      <Text
+                        fontSize={{ xl: '5xl', '2xl': '7xl' }}
+                        fontWeight={400}
+                        mr={5}
+                      >
                         0{index + 1}.
                       </Text>
-                      <Text fontWeight={200} textTransform="uppercase">
+                      <Text
+                        fontSize={{ xl: 'xl', '2xl': '3xl' }}
+                        fontWeight={200}
+                        textTransform="uppercase"
+                      >
                         {step.name}
                       </Text>
                     </Flex>
@@ -90,7 +97,7 @@ const Steps = () => {
                   <Text
                     alignSelf="start"
                     w="50%"
-                    fontSize={{ base: 'lg', xl: '4xl' }}
+                    fontSize={{ base: 'lg', xl: '4xl', '2xl': '6xl' }}
                     fontWeight={300}
                   >
                     {step.description}
@@ -100,10 +107,15 @@ const Steps = () => {
                   align="flex-start"
                   h="100%"
                   w="40%"
+                  justifyContent="center"
                   divider={<StackDivider borderColor="#8341e6" />}
                 >
-                  {step.bullets.map((bullet) => {
-                    return <Box p={5}>{bullet}</Box>;
+                  {step.bullets.map((bullet, index) => {
+                    return (
+                      <Box fontSize={{ '2xl': '3xl' }} key={index} p={5}>
+                        {bullet}
+                      </Box>
+                    );
                   })}
                 </VStack>
               </Flex>
