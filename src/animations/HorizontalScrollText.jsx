@@ -1,76 +1,76 @@
-import "../index.css";
-import { useRef } from "react";
+import '../index.css';
+import { useRef } from 'react';
 import {
-    motion,
-    useScroll,
-    useSpring,
-    useTransform,
-    useMotionValue,
-    useVelocity,
-    useAnimationFrame
-} from "framer-motion";
-import { wrap } from "@motionone/utils";
-import { Image } from "@chakra-ui/react"
+  motion,
+  useScroll,
+  useSpring,
+  useTransform,
+  useMotionValue,
+  useVelocity,
+  useAnimationFrame,
+} from 'framer-motion';
+import { wrap } from '@motionone/utils';
+import { Image } from '@chakra-ui/react';
 
 const HorizontalScrollText = ({ children, baseVelocity = 100 }) => {
-    const baseX = useMotionValue(0);
-    const { scrollY } = useScroll();
-    const scrollVelocity = useVelocity(scrollY);
-    const smoothVelocity = useSpring(scrollVelocity, {
-        damping: 50,
-        stiffness: 400
-    });
-    const velocityFactor = useTransform(smoothVelocity, [0, 1000], [0, 3], {
-        clamp: false
-    });
+  const baseX = useMotionValue(0);
+  const { scrollY } = useScroll();
+  const scrollVelocity = useVelocity(scrollY);
+  const smoothVelocity = useSpring(scrollVelocity, {
+    damping: 50,
+    stiffness: 400,
+  });
+  const velocityFactor = useTransform(smoothVelocity, [0, 1000], [0, 3], {
+    clamp: false,
+  });
+
+  /**
+   * This is a magic wrapping for the length of the text - you
+   * have to replace for wrapping that works for you or dynamically
+   * calculate
+   */
+  const x = useTransform(baseX, (v) => `${wrap(0, -25.6, v)}%`);
+
+  const directionFactor = useRef(1);
+  useAnimationFrame((t, delta) => {
+    let moveBy = directionFactor.current * baseVelocity * (delta / 1000);
 
     /**
-     * This is a magic wrapping for the length of the text - you
-     * have to replace for wrapping that works for you or dynamically
-     * calculate
+     * This is what changes the direction of the scroll once we
+     * switch scrolling directions.
      */
-    const x = useTransform(baseX, (v) => `${wrap(0, -25.6, v)}%`);
+    if (velocityFactor.get() < 0) {
+      directionFactor.current = -1;
+    } else if (velocityFactor.get() > 0) {
+      directionFactor.current = 1;
+    }
 
-    const directionFactor = useRef(1);
-    useAnimationFrame((t, delta) => {
-        let moveBy = directionFactor.current * baseVelocity * (delta / 1000);
+    moveBy += directionFactor.current * moveBy * velocityFactor.get();
 
-        /**
-         * This is what changes the direction of the scroll once we
-         * switch scrolling directions.
-         */
-        if (velocityFactor.get() < 0) {
-            directionFactor.current = -1;
-        } else if (velocityFactor.get() > 0) {
-            directionFactor.current = 1;
-        }
+    baseX.set(baseX.get() + moveBy);
+  });
 
-        moveBy += directionFactor.current * moveBy * velocityFactor.get();
-
-        baseX.set(baseX.get() + moveBy);
-    });
-
-    /**
-     * The number of times to repeat the child text should be dynamically calculated
-     * based on the size of the text and viewport. Likewise, the x motion value is
-     * currently wrapped between -20 and -45% - this 25% is derived from the fact
-     * we have four children (100% / 4). This would also want deriving from the
-     * dynamically generated number of children.
-     */
-    return (
-        <div className="parallax">
-            <motion.div className="scroller" style={{ x }}>
-                <span>{children} </span>
-                <Image mr={20} ml={20} src='/text-divider.svg' />
-                <span>{children} </span>
-                <Image mr={20} ml={20} src='/text-divider.svg' />
-                <span>{children} </span>
-                <Image mr={20} ml={20} src='/text-divider.svg' />
-                <span>{children} </span>
-                <Image mr={20} ml={20} src='/text-divider.svg' />
-            </motion.div>
-        </div>
-    );
+  /**
+   * The number of times to repeat the child text should be dynamically calculated
+   * based on the size of the text and viewport. Likewise, the x motion value is
+   * currently wrapped between -20 and -45% - this 25% is derived from the fact
+   * we have four children (100% / 4). This would also want deriving from the
+   * dynamically generated number of children.
+   */
+  return (
+    <div className="parallax">
+      <motion.div className="scroller" style={{ x }}>
+        <span>{children} </span>
+        <Image mr={20} ml={20} src="/text-divider.svg" />
+        <span>{children} </span>
+        <Image mr={20} ml={20} src="/text-divider.svg" />
+        <span>{children} </span>
+        <Image mr={20} ml={20} src="/text-divider.svg" />
+        <span>{children} </span>
+        <Image mr={20} ml={20} src="/text-divider.svg" />
+      </motion.div>
+    </div>
+  );
 };
 
 export default HorizontalScrollText;

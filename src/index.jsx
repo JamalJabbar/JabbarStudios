@@ -11,8 +11,8 @@ const customTheme = extendTheme({
     global: {
       body: {
         fontFamily: 'M PLUS 1',
-        color: "white",
-        bg: "#202020",
+        color: 'white',
+        bg: '#202020',
       },
     },
   },

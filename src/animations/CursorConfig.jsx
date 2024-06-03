@@ -1,4 +1,4 @@
-import useMouse from "@react-hook/mouse-position";
+import useMouse from '@react-hook/mouse-position';
 
 export const useVariants = (ref) => {
   const mouse = useMouse(ref, {
@@ -21,7 +21,7 @@ export const useVariants = (ref) => {
       opacity: 1,
       height: 40,
       width: 40,
-      fontSize: "20px",
+      fontSize: '20px',
       // backgroundColor: "#8341e6",
       x: mouseXPosition,
       y: mouseYPosition,
@@ -31,11 +31,11 @@ export const useVariants = (ref) => {
     },
     buy: {
       opacity: 1,
-      backgroundColor: "#8341e6",
-      color: "#000",
+      backgroundColor: '#8341e6',
+      color: '#000',
       height: 64,
       width: 64,
-      fontSize: "32px",
+      fontSize: '32px',
       x: mouseXPosition - 32,
       y: mouseYPosition - 32,
       transition: {
@@ -44,11 +44,11 @@ export const useVariants = (ref) => {
     },
     sell: {
       opacity: 1,
-      backgroundColor: "#EF5151",
-      color: "#000",
+      backgroundColor: '#EF5151',
+      color: '#000',
       height: 64,
       width: 64,
-      fontSize: "32px",
+      fontSize: '32px',
       x: mouseXPosition - 48,
       y: mouseYPosition - 48,
       transition: {
@@ -59,8 +59,8 @@ export const useVariants = (ref) => {
 };
 
 export const spring = {
-  type: "spring",
+  type: 'spring',
   stiffness: 100,
   damping: 30,
-  restDelta: 0.001
+  restDelta: 0.001,
 };

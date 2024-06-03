@@ -77,11 +77,11 @@ const OnLoad = ({ cleanup }) => {
   useEffect(() => {
     const playAnimation = async () => {
       const animation = animate(sequence);
-      await animation
-      cleanup(false)
-    }
+      await animation;
+      cleanup(false);
+    };
 
-    playAnimation()
+    playAnimation();
   }, []);
 
   return (

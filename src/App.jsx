@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence, useScroll, useSpring } from 'framer-motion';
-import { spring, useVariants } from "./animations/CursorConfig";
+import { spring, useVariants } from './animations/CursorConfig';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import Footer from './components/Footer';
@@ -12,8 +12,8 @@ function App() {
 
   const [isLoading, setIsLoading] = useState(true);
 
-  const [cursorText, setCursorText] = useState("");
-  const [cursorVariant, setCursorVariant] = useState("default");
+  const [cursorText, setCursorText] = useState('');
+  const [cursorVariant, setCursorVariant] = useState('default');
 
   const ref = useRef(null);
 
@@ -27,16 +27,17 @@ function App() {
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
-    restDelta: 0.001
+    restDelta: 0.001,
   });
-
 
   return (
     <>
       <AnimatePresence>
-        {isLoading ? <OnLoad cleanup={setIsLoading} /> :
-          <SmoothScroll className='example'>
-            <div className='cursor-container' ref={ref}>
+        {isLoading ? (
+          <OnLoad cleanup={setIsLoading} />
+        ) : (
+          <SmoothScroll className="example">
+            <div className="cursor-container" ref={ref}>
               {/* <motion.div
             variants={variants}
             className="circle"
@@ -45,15 +46,23 @@ function App() {
             <span className="cursorText">{cursorText}</span>
           </motion.div> */}
               <Routes key={location.pathname} location={location}>
-                <Route path="/" element={<HomePage setCursorVariant={setCursorVariant} setCursorText={setCursorText} />}>
+                <Route
+                  path="/"
+                  element={
+                    <HomePage
+                      setCursorVariant={setCursorVariant}
+                      setCursorText={setCursorText}
+                    />
+                  }
+                >
                   {/* <Route path="page1" element={<Page1 />} /> */}
                 </Route>
               </Routes>
               <Footer />
             </div>
           </SmoothScroll>
-        }
-      </AnimatePresence >
+        )}
+      </AnimatePresence>
     </>
   );
 }
