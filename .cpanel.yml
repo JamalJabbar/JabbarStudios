@@ -4,4 +4,4 @@ deployment:
     - export DEPLOYPATH=/home/jabbarst/public_html/
     - /bin/cp index.html $DEPLOYPATH
     - /bin/cp -r src $DEPLOYPATH
-    yarn run dev
+    - yarn run dev
