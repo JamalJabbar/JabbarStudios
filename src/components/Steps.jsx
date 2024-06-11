@@ -7,7 +7,7 @@ import {
   Spacer,
   StackDivider,
 } from '@chakra-ui/react';
-import Spline from '@splinetool/react-spline';
+import AnimatedDivider from '../animations/ScrollDivider';
 import RevealText from '../animations/RevealText';
 
 const Steps = () => {
@@ -55,71 +55,78 @@ const Steps = () => {
   ];
 
   return (
-    <Container mt={10} mb={10} p={0} maxW="100vw" position="relative">
-      <VStack ml={20} mr={20} spacing={20}>
+    <Container ml={10} mb={10} mr={10} p={0} maxW="90vw" position="relative">
+      <Text
+        alignSelf="start"
+        fontSize={{ base: 'xl', md: '2xl', xl: '3xl', '2xl': '5xl' }}
+        fontWeight={100}
+      >
+        <RevealText translate={50} delay={0}>
+          Our 3 step process...
+        </RevealText>
+      </Text>
+
+      <AnimatedDivider />
+
+      <VStack mt={60} mr={10} spacing={200}>
         {listOfSteps.map((step, index) => {
           return (
-            <Box
-              key={index}
-              borderRadius="5%"
-              border="1px solid #8341e6"
-              h={{ base: '', xl: '90vh' }}
-              w="100%"
-              p={20}
-            >
-              <Flex h="100%" w="100%" justify="space-evenly">
-                <VStack h="100%">
-                  <RevealText
-                    style={{
-                      display: 'flex',
-                      alignSelf: 'start',
-                      alignItems: 'baseline',
-                    }}
+            <RevealText key={index} translate={100} delay={1}>
+              <Box h={{ base: '' }} w="100%">
+                <Flex h="100%" w="100%" justify="space-evenly">
+                  <VStack h="100%">
+                    <RevealText
+                      style={{
+                        display: 'flex',
+                        alignSelf: 'start',
+                        alignItems: 'baseline',
+                      }}
+                    >
+                      <Flex align="baseline">
+                        <Text
+                          fontSize={{ xl: '5xl', '2xl': '7xl' }}
+                          fontWeight={400}
+                          mr={5}
+                        >
+                          0{index + 1}.
+                        </Text>
+                        <Text
+                          fontSize={{ xl: 'xl', '2xl': '3xl' }}
+                          fontWeight={400}
+                          textTransform="uppercase"
+                        >
+                          {step.name}
+                        </Text>
+                      </Flex>
+                    </RevealText>
+                    <Spacer />
+                    <Text
+                      alignSelf="start"
+                      w="50%"
+                      fontSize={{ base: 'lg', xl: '4xl', '2xl': '6xl' }}
+                      fontWeight={100}
+                    >
+                      {step.description}
+                    </Text>
+                  </VStack>
+                  <VStack
+                    align="flex-start"
+                    h="100%"
+                    w="40%"
+                    justifyContent="center"
+                    divider={<StackDivider borderColor="#8341e6" />}
                   >
-                    <Flex align="baseline">
-                      <Text
-                        fontSize={{ xl: '5xl', '2xl': '7xl' }}
-                        fontWeight={400}
-                        mr={5}
-                      >
-                        0{index + 1}.
-                      </Text>
-                      <Text
-                        fontSize={{ xl: 'xl', '2xl': '3xl' }}
-                        fontWeight={200}
-                        textTransform="uppercase"
-                      >
-                        {step.name}
-                      </Text>
-                    </Flex>
-                  </RevealText>
-                  <Spacer />
-                  <Text
-                    alignSelf="start"
-                    w="50%"
-                    fontSize={{ base: 'lg', xl: '4xl', '2xl': '6xl' }}
-                    fontWeight={300}
-                  >
-                    {step.description}
-                  </Text>
-                </VStack>
-                <VStack
-                  align="flex-start"
-                  h="100%"
-                  w="40%"
-                  justifyContent="center"
-                  divider={<StackDivider borderColor="#8341e6" />}
-                >
-                  {step.bullets.map((bullet, index) => {
-                    return (
-                      <Box fontSize={{ '2xl': '3xl' }} key={index} p={5}>
-                        {bullet}
-                      </Box>
-                    );
-                  })}
-                </VStack>
-              </Flex>
-            </Box>
+                    {step.bullets.map((bullet, index) => {
+                      return (
+                        <Box fontSize={{ '2xl': '3xl' }} key={index} p={5}>
+                          {bullet}
+                        </Box>
+                      );
+                    })}
+                  </VStack>
+                </Flex>
+              </Box>
+            </RevealText>
           );
         })}
       </VStack>
