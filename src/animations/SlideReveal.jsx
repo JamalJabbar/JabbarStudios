@@ -1,11 +1,11 @@
 import '../index.css';
 import { useEffect, useRef } from 'react';
-import { motion, useInView, useAnimate } from 'framer-motion';
+import { useInView } from 'framer-motion';
 
 const SlideReveal = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, {
-    once: false,
+    once: true,
     margin: '0px 0px -15% 0%',
   });
 
