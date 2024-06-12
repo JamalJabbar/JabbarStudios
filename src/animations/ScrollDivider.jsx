@@ -1,12 +1,6 @@
 import '../index.css';
-import React, { useRef, useState } from 'react';
-import {
-  motion,
-  useScroll,
-  useTransform,
-  useSpring,
-  useMotionValue,
-} from 'framer-motion';
+import { useRef } from 'react';
+import { motion, useScroll, useSpring } from 'framer-motion';
 
 const AnimatedDivider = ({ style }) => {
   const ref = useRef(null);

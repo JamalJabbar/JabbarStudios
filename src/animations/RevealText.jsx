@@ -1,13 +1,6 @@
 import '../index.css';
-import React, { useEffect, useRef } from 'react';
-import {
-  motion,
-  useInView,
-  useTransform,
-  useSpring,
-  useMotionValue,
-  useMotionValueEvent,
-} from 'framer-motion';
+import { useRef } from 'react';
+import { useInView } from 'framer-motion';
 
 const RevealText = ({ style, children, translate = 75, delay = 0.3 }) => {
   const ref = useRef(null);

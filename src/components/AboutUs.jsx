@@ -1,6 +1,5 @@
 import '../index.css';
-import { VStack, Text, StackDivider } from '@chakra-ui/react';
-import React, { useEffect, useRef, useState } from 'react';
+import { VStack, Text } from '@chakra-ui/react';
 import HighlightScroll from '../animations/HighlightScroll';
 import AnimatedDivider from '../animations/ScrollDivider';
 import RevealText from '../animations/RevealText';
@@ -13,7 +12,7 @@ const AboutUs = () => {
   const aboutUsTextMobile = ``;
 
   return (
-    <VStack maxW="100%" h="190vh" position="relative" pt={20} mr={10} ml={10}>
+    <VStack maxW="100%" position="relative" pt={20} mr={10} ml={10}>
       <Text
         alignSelf="start"
         fontSize={{ base: 'xl', md: '2xl', xl: '3xl', '2xl': '5xl' }}
