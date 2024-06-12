@@ -15,7 +15,7 @@ const SlideReveal = () => {
         position: 'absolute',
         transformOrigin: '100%',
         transform: isInView ? `scaleX(0)` : 'none',
-        transition: `all 0.9s cubic-bezier(0.6, 0.01, 0.05, 0.95) 0.3s`,
+        transition: `all 0.9s cubic-bezier(0.6, 0.01, 0.05, 0.95) 0.9s`,
         background: '#8341e6',
         zIndex: 3,
         height: '100%',

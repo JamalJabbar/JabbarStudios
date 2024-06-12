@@ -25,9 +25,9 @@ const AboutUs = () => {
       <AnimatedDivider />
       <VStack ml={{ base: 0, xl: '30%', '2xl': '40%' }}>
         <Text
-          mt={40}
-          mb={20}
-          fontSize={{ base: '3xl', xl: '7xl', '2xl': '8xl' }}
+          mt={{ base: 20, xl: 40 }}
+          mb={{ base: 10, xl: 20 }}
+          fontSize={{ base: '2xl', xl: '7xl', '2xl': '8xl' }}
           fontWeight={500}
         >
           <Text className="scroll-text">
@@ -47,24 +47,24 @@ const AboutUs = () => {
         <AnimatedDivider />
         <VStack
           spacing={8}
-          mt={20}
+          mt={{ base: 10, xl: 20 }}
           fontSize={{ xl: '3xl', '2xl': '5xl' }}
           fontWeight={200}
         >
-          <RevealText>
+          <RevealText margin="-25%">
             <Text>
               We guide new and established companies to high-value marketing
               investments that increase revenue and relevance.
             </Text>
           </RevealText>
-          <RevealText>
+          <RevealText margin="-25%">
             <Text>
               Our mission is to develop the strategy, design the materials, and
               assemble the technologies that elevate your identity and
               future-proof your venture.
             </Text>
           </RevealText>
-          <RevealText>
+          <RevealText margin="-25%">
             <Text>
               Based out of Dallas, Texas, our team of innovative designers,
               developers, and consultants make creative use of emerging web

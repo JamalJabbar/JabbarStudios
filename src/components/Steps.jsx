@@ -89,7 +89,7 @@ const Steps = () => {
                     alignItems: 'baseline',
                   }}
                 >
-                  <Flex align="baseline">
+                  <Flex align="baseline" mb={{ base: 50, md: 0 }}>
                     <Text
                       fontSize={{ xl: '5xl', '2xl': '7xl' }}
                       fontWeight={400}
@@ -106,34 +106,39 @@ const Steps = () => {
                     </Text>
                   </Flex>
                 </RevealText>
-                <RevealText>
-                  <Flex w="100%">
-                    <RevealText
-                      delay={0.5}
-                      style={{
-                        display: 'flex',
-                        flexDirection: 'column-reverse',
-                      }}
+                <Flex w="100%" direction={{ base: 'column', md: 'row' }}>
+                  <RevealText
+                    delay={0.5}
+                    style={{
+                      display: 'flex',
+                      flexDirection: 'column-reverse',
+                    }}
+                  >
+                    <Text
+                      alignSelf="start"
+                      mb={{ base: 50, md: 0 }}
+                      w={{ base: '100%', md: '50%' }}
+                      fontSize={{ base: 'lg', xl: '4xl', '2xl': '6xl' }}
+                      fontWeight={300}
                     >
-                      <Text
-                        alignSelf="start"
-                        w="50%"
-                        fontSize={{ base: 'lg', xl: '4xl', '2xl': '6xl' }}
-                        fontWeight={100}
-                      >
-                        {step.description}
-                      </Text>
-                    </RevealText>
-                    <VStack
-                      w="40%"
-                      align="flex-start"
-                      h="100%"
-                      justifyContent="center"
-                    >
-                      {step.bullets.map((bullet, index) => {
-                        return (
-                          <Box
-                            key={index}
+                      {step.description}
+                    </Text>
+                  </RevealText>
+                  <VStack
+                    w={{ base: '100%', md: '40%' }}
+                    align="flex-start"
+                    h="100%"
+                    justifyContent="center"
+                  >
+                    {step.bullets.map((bullet, index) => {
+                      return (
+                        <RevealText
+                          translate={0}
+                          style={{ width: '100%' }}
+                          key={index}
+                        >
+                          <Text
+                            fontWeight={300}
                             position="relative"
                             h="100%"
                             w="100%"
@@ -147,12 +152,12 @@ const Steps = () => {
                           >
                             {bullet}
                             <SlideReveal />
-                          </Box>
-                        );
-                      })}
-                    </VStack>
-                  </Flex>
-                </RevealText>
+                          </Text>
+                        </RevealText>
+                      );
+                    })}
+                  </VStack>
+                </Flex>
               </VStack>
               {index !== listOfSteps.length - 1 && <AnimatedDivider />}
             </>
