@@ -6,6 +6,15 @@ import HomePage from './pages/HomePage';
 import App from './App';
 import './index.css';
 
+const breakpoints = {
+  base: '0em',
+  sm: '30em',
+  md: '48em',
+  lg: '62em',
+  xl: '80em',
+  '2xl': '96em',
+}
+
 const customTheme = extendTheme({
   styles: {
     global: {
@@ -16,6 +25,7 @@ const customTheme = extendTheme({
       },
     },
   },
+  ...breakpoints
 });
 
 ReactDOM.createRoot(document.getElementById('root')).render(
