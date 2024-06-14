@@ -117,15 +117,20 @@ const Steps = () => {
                     <Text
                       alignSelf="start"
                       mb={{ base: 50, md: 0 }}
-                      w={{ base: '100%', md: '50%' }}
-                      fontSize={{ base: 'lg', xl: '4xl', '2xl': '6xl' }}
+                      w={{ base: '100%', md: '90%', xl: '70%' }}
+                      fontSize={{
+                        base: 'lg',
+                        md: '3xl',
+                        xl: '4xl',
+                        '2xl': '6xl',
+                      }}
                       fontWeight={300}
                     >
                       {step.description}
                     </Text>
                   </RevealText>
                   <VStack
-                    w={{ base: '100%', md: '40%' }}
+                    w={{ base: '100%', md: '70%', xl: '50%' }}
                     align="flex-start"
                     h="100%"
                     justifyContent="center"

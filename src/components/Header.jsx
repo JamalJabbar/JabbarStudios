@@ -10,7 +10,7 @@ const Header = () => {
     <VStack
       position="absolute"
       top={0}
-      h="100vh"
+      h={{ base: '75vh', lg: '100vh' }}
       w="100vw"
       color="white"
       zIndex={1}
@@ -30,14 +30,14 @@ const Header = () => {
       </Reveal>
       <Reveal delay={0.8}>
         <Text
-          fontSize={{ base: 'lg', md: 'xl', xl: '2xl', '2xl': '4xl' }}
+          fontSize={{ base: 'lg', md: 'xl', xl: '3xl', '2xl': '4xl' }}
           as="i"
           zIndex={1}
         >
           Innovative, curated website design
         </Text>
       </Reveal>
-      {/* <Spacer /> */}
+      <Spacer />
       <Subheader />
       <Spacer />
     </VStack>

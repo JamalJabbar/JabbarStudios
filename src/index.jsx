@@ -12,8 +12,8 @@ const breakpoints = {
   md: '48em',
   lg: '62em',
   xl: '80em',
-  '2xl': '96em',
-}
+  '2xl': '110em', // 27in+
+};
 
 const customTheme = extendTheme({
   styles: {
@@ -25,7 +25,7 @@ const customTheme = extendTheme({
       },
     },
   },
-  ...breakpoints
+  breakpoints: { ...breakpoints },
 });
 
 ReactDOM.createRoot(document.getElementById('root')).render(
