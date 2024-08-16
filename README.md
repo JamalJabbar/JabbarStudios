@@ -38,3 +38,5 @@ or
 - React Router (routing)
 - Framer Motion (animation)
 - GSAP (animation)
+
+### If you have any questions you can reach me at jamal.jabbar@gmail.com
