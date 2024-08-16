@@ -34,9 +34,9 @@ or
 ## Technologies
 
 - React
-- ChakraUI (styling)
-- React Router (routing)
-- Framer Motion (animation)
-- GSAP (animation)
+- ChakraUI(https://v2.chakra-ui.com/) (styling)
+- React Router(https://reactrouter.com/en/main) (routing)
+- Framer Motion(https://www.framer.com/motion/) (animation)
+- GSAP(https://gsap.com/) (animation)
 
 #### If you have any questions you can reach me at jamal.jabbar10@gmail.com
