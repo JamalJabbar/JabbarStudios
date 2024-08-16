@@ -1,8 +1,40 @@
-# React + Vite
+# Jabbar Studios
+Small react project to show off my UI/UX and frontend skills!
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- [Installation](#installation)
+- [Usage](#usage)
+- [Technologies](#technologies)
 
-Currently, two official plugins are available:
+## Installation
+1. Clone the repository:
+```bash
+ git clone https://github.com/yourusername/JabbarStudios.git
+```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+2. Install dependencies:
+```bash
+ yarn install
+```
+or
+```bash
+ npm install
+ ```
+
+## Usage
+
+run the project locally with either
+```bash
+ npm run dev
+```
+or
+```bash
+ yarn run dev
+```
+
+## Technologies
+
+- React
+- ChakraUI (styling)
+- React Router (routing)
+- Framer Motion (animation)
+- GSAP (animation)
