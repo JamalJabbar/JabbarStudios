@@ -13,7 +13,7 @@ const AboutUs = () => {
     <VStack maxW="100%" position="relative" pt={20} mr={10} ml={10}>
       <Text
         alignSelf="start"
-        fontSize={{ base: 'xl', md: '2xl', xl: '3xl', '2xl': '5xl' }}
+        fontSize={{ base: 'xl', md: '2xl', xl: '4xl', '2xl': '5xl' }}
         fontWeight={100}
       >
         <RevealText translate={50} delay={0}>
@@ -21,7 +21,7 @@ const AboutUs = () => {
         </RevealText>
       </Text>
       <AnimatedDivider />
-      <VStack ml={{ base: 0, md: '20%', xl: '30%', '2xl': '40%' }}>
+      <VStack ml={{ base: 0, md: '10%', xl: '30%', '2xl': '40%' }}>
         <RevealText>
           <Text
             mt={{ base: 20, xl: 40 }}
@@ -30,6 +30,7 @@ const AboutUs = () => {
               base: '2xl',
               md: '5xl',
               lg: '6xl',
+              xl: '7xl',
               '2xl': '8xl',
             }}
             fontWeight={500}
@@ -53,7 +54,7 @@ const AboutUs = () => {
         <VStack
           spacing={8}
           mt={{ base: 10, xl: 20 }}
-          fontSize={{ md: '2xl', xl: '3xl', '2xl': '5xl' }}
+          fontSize={{ md: '2xl', xl: '4xl', '2xl': '5xl' }}
           fontWeight={200}
         >
           <RevealText margin="-25%">
