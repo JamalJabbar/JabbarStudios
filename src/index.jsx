@@ -12,7 +12,7 @@ const breakpoints = {
   md: '48em',
   lg: '62em',
   xl: '80em',
-  '2xl': '110em', // 27in+
+  '2xl': '150em', // 27in+
 };
 
 const customTheme = extendTheme({
