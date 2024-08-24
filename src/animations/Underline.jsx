@@ -1,7 +1,7 @@
 import { VStack } from '@chakra-ui/react';
 import { motion, useAnimate } from 'framer-motion';
 
-const Underline = ({ children }) => {
+const Underline = ({ children, underlineColor }) => {
   const [scope, animate] = useAnimate();
 
   const sequence = [
@@ -16,7 +16,7 @@ const Underline = ({ children }) => {
   return (
     <VStack onMouseEnter={underline} ref={scope}>
       {children}
-      <div className="underline" />
+      <div style={{ backgroundColor: underlineColor }} className="underline" />
     </VStack>
   );
 };
