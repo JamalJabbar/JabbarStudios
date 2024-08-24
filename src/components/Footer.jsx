@@ -6,12 +6,16 @@ import AnimatedDivider from '../animations/ScrollDivider';
 import Underline from '../animations/Underline';
 import RevealText from '../animations/RevealText';
 
-export const goToTop = () => {
+const goToTop = () => {
   document.documentElement.scrollTo({
     top: 0,
     behavior: 'smooth',
   });
 };
+
+function copyText() {
+  navigator.clipboard.writeText('jamal.jabbar10@gmail.com');
+}
 
 const Footer = () => {
   const container = useRef();
@@ -36,13 +40,14 @@ const FooterContent = ({ scrollProgress }) => {
         <RevealText>
           <Underline>
             <Text
+              onClick={copyText}
               mt={5}
               alignSelf="start"
-              fontSize={{ base: '2xl', md: '4xl', xl: '7xl', '2xl': '8xl' }}
+              fontSize={{ base: '2xl', md: '4xl', xl: '6xl', '2xl': '7xl' }}
               fontWeight={300}
               cursor="pointer"
             >
-              hello@jabbar.studio
+              jamal.jabbar10@gmail.com
             </Text>
           </Underline>
         </RevealText>
@@ -51,9 +56,9 @@ const FooterContent = ({ scrollProgress }) => {
       <RevealText style={{ alignSelf: 'start' }}>
         <Text
           ml={10}
-          fontSize={{ xl: '2xl', '2xl': '5xl' }}
+          fontSize={{ xl: '4xl', '2xl': '6xl' }}
           fontWeight={200}
-          textTransform="uppercase"
+          textTransform="lowercase"
           alignSelf="start"
         >
           Jamal Jabbar
@@ -66,7 +71,7 @@ const FooterContent = ({ scrollProgress }) => {
           cursor="pointer"
         >
           <Underline>
-            <>+1 (469) 664 8690</>
+            <a href="tel:+14696648690">+1 (469) 664 8690</a>
           </Underline>
         </Text>
       </RevealText>
@@ -87,7 +92,7 @@ const FooterContent = ({ scrollProgress }) => {
         </Text>
         <Spacer />
         <Show above="sm">
-          <Underline>
+          <Underline underlineColor="#8341e6">
             <Text
               cursor="pointer"
               onClick={goToTop}
